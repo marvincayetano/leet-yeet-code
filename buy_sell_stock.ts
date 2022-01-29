@@ -29,3 +29,28 @@ var maxProfit = function (prices) {
   // Output can be 0 if there will be no profit
   return currentHighest;
 };
+
+// O(n)
+var maxProfit = function (prices) {
+  var n = prices.length;
+  var minPrice = Number.MAX_SAFE_INTEGER;
+  var maxProfit = 0;
+
+  for (var i = 0; i < n; i++) {
+    // [7,1,5,3,6,4]
+    const todayPrice = prices[i];
+
+    if (minPrice > todayPrice) minPrice = prices[i];
+    // MinPrice = 7
+    // MinPrice = 1
+    // Else if todaysProfit(from the loop) > maxProfit
+    else if (todayPrice - minPrice > maxProfit)
+      maxProfit = todayPrice - minPrice;
+    // 5 - 1 = 4 > 0, maxProfit = 5 - 1 = 4
+
+    // The idea is to mark down the min price
+    // Then check the max price everytime todays price is higher
+    // than the min price
+  }
+  return maxProfit;
+};
