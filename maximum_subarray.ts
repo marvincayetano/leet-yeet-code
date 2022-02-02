@@ -13,12 +13,19 @@ var maxSubArray = function (nums) {
 };
 
 // Kadanes solution to maxSubArray
-function maxSubArrayKadanes(arr) {
-  let a1 = 0;
-  let a2 = arr[0];
-  arr.forEach((i, a) => {
-    a1 = Math.max(i, a1 + i);
-    a2 = Math.max(a2, a1);
-  });
-  return a2;
-}
+var maxSubArrayKadanes = function (nums) {
+  var len = nums.length;
+  var max = Number.MIN_SAFE_INTEGER;
+  var before = 0;
+  var now = 0;
+
+  if (!len) return 0;
+
+  for (var i = 0; i < len; i++) {
+    now = Math.max(before + nums[i], nums[i]);
+    max = Math.max(now, max);
+    before = now;
+  }
+
+  return max;
+};
