@@ -3,15 +3,7 @@
  * @return {number}
  */
 
-// Brute force
-var maxSubArray = function (nums) {
-  // Check for constraints
-  if (nums.length === 1) return nums[0];
-
-  const n = nums.length;
-  let maxValue = 0;
-};
-
+// TODO: Go back here
 // Kadanes solution to maxSubArray
 var maxSubArrayKadanes = function (nums) {
   var len = nums.length;
