@@ -41,3 +41,10 @@ function isAnagram(s: string, t: string): boolean {
 
   return true;
 }
+
+// Short solution
+function isAnagram(s: string, t: string): boolean {
+  // First is what are the constraints
+  // s & t lengths are between 1 and 5 * 10^4
+  // they are always lowercase
+}
