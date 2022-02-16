@@ -17,9 +17,9 @@ function isValid(s: string): boolean {
   for (const singleChar of s) {
     // The idea is that if the char is opening
 
-    // we should unshift (STACK) it to an array
+    // we should push (STACK) it to an array
 
-    // If the char is closing then we should shift (REMOVE THE FIRST ELEMENT)
+    // If the char is closing then we should pop (REMOVE THE FIRST ELEMENT)
 
     // THIS IS BASICALLY A STACK
 
@@ -27,13 +27,13 @@ function isValid(s: string): boolean {
       case "[":
       case "{":
       case "(":
-        STACK.unshift(singleChar);
+        STACK.push(singleChar);
         break;
 
       case "]":
       case "}":
       case ")":
-        const value = STACK.shift();
+        const value = STACK.pop();
         if (singleChar === "]" && value !== "[") return false;
         else if (singleChar === "}" && value !== "{") return false;
         else if (singleChar === ")" && value !== "(") return false;
