@@ -44,5 +44,3 @@ function isValid(s: string): boolean {
 
   return STACK.length === 0;
 }
-
-console.log(isValid("()"));
