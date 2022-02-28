@@ -17,6 +17,9 @@
  */
 
 var maxDepth = function (root) {
+  // Constraint because it can have null
   if (root === null) return 0;
+
+  // Math max finds the highest number
   return 1 + Math.max(maxDepth(root.left), maxDepth(root.right));
 };
