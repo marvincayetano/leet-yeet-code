@@ -1,14 +1,16 @@
-function generate(numRows: number): number[][] {
-  const res = [];
-  const returnArr = [];
-  while (res.length < numRows) {
+// Given an integer rowIndex, return the rowIndexth (0-indexed) row of the Pascal's triangle.
+
+// In Pascal's triangle, each number is the sum of the two numbers directly above it as shown:
+
+function getRow(rowIndex: number): number[] {
+  let res = [];
+  let i = 0;
+  let j = 0;
+  for (i = 0; i <= rowIndex; i++) {
     res.unshift(1);
-    for (let i = 1; i < res.length - 1; i++) {
-      res[i] += res[i + 1];
+    for (j = 1; j < i; j++) {
+      res[j] += res[j + 1];
     }
-
-    returnArr.push([...res]);
   }
-
-  return returnArr;
+  return res;
 }
