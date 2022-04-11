@@ -1,7 +1,8 @@
 function convertToTitle(columnNumber: number): string {
-  var num = columnNumber;
-  var tmp = 0;
-  var res = "";
+  let num = columnNumber;
+  let tmp = 0;
+  let res = "";
+
   while (num > 0) {
     tmp = num % 26;
     if (tmp === 0) tmp = 26;
@@ -11,7 +12,7 @@ function convertToTitle(columnNumber: number): string {
   return res;
 }
 
-var getChar = function (num) {
-  var start = "A".charCodeAt(0);
+const getChar = function (num) {
+  const start = "A".charCodeAt(0);
   return String.fromCharCode(start + num - 1);
 };
