@@ -19,4 +19,9 @@
 
 // -231 <= n <= 231 - 1
 
-function isPowerOfThree(n: number): boolean {}
+function isPowerOfThree(n: number): boolean {
+  if (n <= 0) return false;
+  if (n % 3 == 0) return isPowerOfThree(n / 3);
+  if (n == 1) return true;
+  return false;
+}
