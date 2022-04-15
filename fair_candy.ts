@@ -24,4 +24,7 @@
 // Alice and Bob have a different total number of candies.
 // There will be at least one valid answer for the given input.
 
-function fairCandySwap(aliceSizes: number[], bobSizes: number[]): number[] {}
+function fairCandySwap(aliceSizes: number[], bobSizes: number[]): number[] {
+  // TODO: Use hash set
+  // https://www.codingninjas.com/codestudio/library/fair-candy-swap
+}
