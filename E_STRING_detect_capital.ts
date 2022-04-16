@@ -10,4 +10,8 @@ function detectCapitalUse(word: string): boolean {
   if (word.toUpperCase() === word) {
     return true;
   }
+
+  if (word.length === 0) {
+    return false;
+  }
 }
