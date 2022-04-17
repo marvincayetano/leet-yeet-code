@@ -24,4 +24,31 @@
 // s does not contain any leading or trailing spaces.
 // All the words in s are separated by a single space.
 
-function wordPattern(pattern: string, s: string): boolean {}
+function wordPattern(pattern: string, s: string): boolean {
+  const map = new Map();
+
+  // split the sentence to words
+  const words = s.split(" ");
+  const patterns = pattern.split("");
+
+  if (words.length !== patterns.length) {
+    return false;
+  }
+
+  console.log(words);
+  console.log(patterns);
+  for (let i = 0; i < words.length; i++) {
+    // If pattern already exist
+    const tempPattern = patterns[i];
+    const tempWord = map.get(tempPattern);
+    if (tempWord !== undefined && tempWord !== words[i]) {
+      return false;
+    } else {
+      map.set(tempPattern, words[i]);
+    }
+  }
+
+  return true;
+}
+
+wordPattern("abba", "dog cat cat dog");
