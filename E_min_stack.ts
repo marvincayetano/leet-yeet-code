@@ -28,15 +28,46 @@
 // minStack.getMin(); // return -2
 
 class MinStack {
+  private stack: [number, number][] = [];
+
   constructor() {}
 
-  push(val: number): void {}
+  /**
+   * Push element x onto stack.
+   * Time Complexity: O(1);
+   * Space Complexity: O(n);
+   */
+  push(x: number): void {
+    const min = this.stack.length ? Math.min(this.getMin(), x) : x; // only number in stack
+    this.stack.push([x, min]);
+  }
 
-  pop(): void {}
+  /**
+   * Removes the element on top of the stack.
+   * Time Complexity: O(1);
+   * Space Complexity: O(1);
+   */
+  pop(): void {
+    this.stack.pop();
+  }
 
-  top(): number {}
+  /**
+   * Get the top element.
+   * Time Complexity: O(1);
+   * Space Complexity: O(1);
+   */
+  top(): number {
+    return this.stack[this.stack.length - 1][0];
+  }
 
-  getMin(): number {}
+  /**
+   * Retrieve the minimum element in the stack.
+   * Time Complexity: O(1);
+   * Space Complexity: O(1);
+   */
+  getMin(): number {
+    return this.stack[this.stack.length - 1][1];
+  }
 }
 
 /**
