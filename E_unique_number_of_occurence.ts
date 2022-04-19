@@ -19,4 +19,35 @@
 // 1 <= arr.length <= 1000
 // -1000 <= arr[i] <= 1000
 
-function uniqueOccurrences(arr: number[]): boolean {}
+function uniqueOccurrences(arr: number[]): boolean {
+  // We can use object or set
+  // Constraint if arr.length <= 1
+
+  if (arr.length <= 1) {
+    return true;
+  }
+
+  const uniqueObj = {};
+
+  // Count all the nums and put it in the object
+  for (const num of arr) {
+    const tempNum = uniqueObj[num];
+    if (tempNum) {
+      uniqueObj[num] = tempNum + 1;
+    } else {
+      uniqueObj[num] = 0;
+    }
+  }
+
+  // Now that we all have the nums lets loop through the object
+  const arrUniqueObj = Object.values(uniqueObj);
+  const firstNum = arrUniqueObj[0];
+
+  for (let i = 1; i < arrUniqueObj.length; i++) {
+    if (firstNum !== arrUniqueObj[i]) {
+      return true;
+    }
+  }
+
+  return true;
+}
