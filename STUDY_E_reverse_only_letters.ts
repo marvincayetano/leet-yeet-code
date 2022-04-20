@@ -23,4 +23,22 @@
 // s consists of characters with ASCII values in the range [33, 122].
 // s does not contain '\"' or '\\'.
 
-function reverseOnlyLetters(s: string): string {}
+var isAlpha = (c) => /[a-zA-Z]/.test(c);
+
+function reverseOnlyLetters(s: string): string {
+  let l = 0;
+  let r = s.length - 1;
+  let arr = s.split("");
+
+  while (l < r) {
+    if (!isAlpha(arr[l])) l++;
+    if (!isAlpha(arr[r])) r--;
+    if (isAlpha(arr[l]) && isAlpha(arr[r])) {
+      // swap
+      [arr[l], arr[r]] = [arr[r], arr[l]];
+      l++;
+      r--;
+    }
+  }
+  return arr.join("");
+}
