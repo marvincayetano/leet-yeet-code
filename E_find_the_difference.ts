@@ -20,4 +20,24 @@
 // t.length == s.length + 1
 // s and t consist of lowercase English letters.
 
-function findTheDifference(s: string, t: string): string {}
+function findTheDifference(s: string, t: string): string {
+  // Constraint
+  if (s === "") return t;
+
+  // Otherwise split both strings to character array
+  const sArray = s.split("");
+  const tArray = t.split("");
+
+  // Return tChar if not the same as sChar
+  for (let i = 0; i < sArray.length; i++) {
+    console.log("first");
+    if (sArray[i] !== tArray[i]) {
+      return tArray[i];
+    }
+  }
+
+  // Return the last one if not found in array length of sArray
+  return tArray[-1];
+}
+
+console.log(findTheDifference("abcd", "abcde"));
