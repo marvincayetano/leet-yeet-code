@@ -14,3 +14,19 @@
 
 // Input: x = 120
 // Output: 21
+
+function reverse(x: number): number {
+  // Make it positive if it isn't
+  const xPositive = x * 1;
+
+  const reversedNumber = parseInt(
+    xPositive.toString().split("").reverse().join("")
+  );
+
+  // Check if it goes outside of signed 32-bit
+  if (reversedNumber > 0x7fffffff) {
+    return 0;
+  }
+
+  return x < 0 ? reversedNumber * -1 : reversedNumber;
+}
