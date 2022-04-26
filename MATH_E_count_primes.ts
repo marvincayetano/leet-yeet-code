@@ -18,4 +18,21 @@
 
 // 0 <= n <= 5 * 106
 
-function countPrimes(n: number): number {}
+function countPrimes(n: number): number {
+  // since 2 is prime we set count to 1
+  let count = 1;
+
+  for (let i = 3; i < n; i++) {
+    if (isPrime(i)) count++;
+  }
+
+  return count;
+}
+
+function isPrime(n: number): boolean {
+  if (n <= 1) return false;
+
+  for (let i = 2; i < n; i++) if (n % i == 0) return false;
+
+  return true;
+}
