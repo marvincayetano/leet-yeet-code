@@ -21,3 +21,21 @@
 // Constraints:
 
 // 1 <= n <= 104
+
+function fizzBuzz(n: number): string[] {
+  const returnStr = [];
+
+  for (let i = 1; i <= n; i++) {
+    if (i % 3 === 0 && i % 5 === 0) {
+      returnStr.push("FizzBuzz");
+    } else if (i % 3 === 0) {
+      returnStr.push("Fizz");
+    } else if (i % 5 === 0) {
+      returnStr.push("Buzz");
+    } else {
+      returnStr.push(`${i}`);
+    }
+  }
+
+  return returnStr;
+}
