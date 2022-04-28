@@ -19,3 +19,24 @@
 // -1000 <= Node.val <= 1000
 // The value of each node in the list is unique.
 // The node to be deleted is in the list and is not a tail node
+
+//  Definition for singly-linked list.
+class ListNode {
+  val: number;
+  next: ListNode | null;
+  constructor(val?: number, next?: ListNode | null) {
+    this.val = val === undefined ? 0 : val;
+    this.next = next === undefined ? null : next;
+  }
+}
+
+/**
+ Do not return anything, modify it in-place instead.
+ */
+function deleteNode(root: ListNode | null): void {
+  if (root == null || root.next == null) {
+    return null;
+  }
+  root.val = root.next.val;
+  root.next = root.next.next;
+}
