@@ -26,3 +26,13 @@
 // The input must be a binary string of length 32.
 
 // Follow up: If this function is called many times, how would you optimize it?
+
+function hammingWeight(n: number): number {
+  const bin = n.toString(2);
+
+  let sum = 0;
+  for (let i = bin.length - 1; i >= 0; i--) {
+    if (bin[i] === "1") sum++;
+  }
+  return sum;
+}
