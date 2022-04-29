@@ -17,3 +17,25 @@
 
 // 1 <= s.length <= 105
 // s consists of only lowercase English letters.
+
+function firstUniqChar(s: string): number {
+  const hashTable = {};
+
+  for (let i = 0; i < s.length; i++) {
+    const char = s[i];
+
+    if (hashTable[char]) {
+      hashTable[char]++;
+    } else {
+      hashTable[char] = 1;
+    }
+  }
+
+  for (let i = 0; i < s.length; i++) {
+    if (hashTable[s[i]] === 1) {
+      return i;
+    }
+  }
+
+  return -1;
+}
