@@ -38,3 +38,12 @@ SELECT email
 FROM Person
 GROUP BY email
 HAVING COUNT(*) > 1;
+
+SELECT *
+FROM Person
+WHERE id NOT IN
+(
+  SELECT MAX(id)
+  FROM Person
+  GROUP BY email
+);
