@@ -21,3 +21,7 @@
 -- | Afghanistan  | 25500100    | 652230       |
 -- | Algeria      | 37100000    | 2381741      |
 -- +--------------+-------------+--------------+
+
+SELECT name,population,area
+FROM World
+WHERE area > 3000000 or population > 25000000;
