@@ -27,6 +27,12 @@ FROM World
 WHERE area > 3000000 or population > 25000000;
 
 -- A lot faster than above
+-- But why would it be faster ??
+-- NOTE: Both UNION and UNION ALL operators combine rows from result sets into a single result set.
+--       The UNION operator removes eliminate duplicate rows, whereas the UNION ALL operator does not.
+--       Because the UNION ALL operator does not remove duplicate rows, it runs faster than the UNION operator.
+
+
 SELECT
     name, population, area
 FROM
