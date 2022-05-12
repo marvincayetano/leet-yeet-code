@@ -32,6 +32,9 @@ WHERE area > 3000000 or population > 25000000;
 --       The UNION operator removes eliminate duplicate rows, whereas the UNION ALL operator does not.
 --       Because the UNION ALL operator does not remove duplicate rows, it runs faster than the UNION operator.
 
+-- NOTE: The reason is that using OR in a query will often cause the Query Optimizer to abandon use of index seeks
+--       and revert to scans. If you look at the execution plans for your two queries, you'll most likely see scans
+--       where you are using the OR and seeks where you are using the UNION
 
 SELECT
     name, population, area
