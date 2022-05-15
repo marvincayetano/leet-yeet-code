@@ -1,54 +1,46 @@
--- There is a table World
+-- Table: Customer
 
--- +-----------------+------------+------------+--------------+---------------+
--- | name            | continent  | area       | population   | gdp           |
--- +-----------------+------------+------------+--------------+---------------+
--- | Afghanistan     | Asia       | 652230     | 25500100     | 20343000      |
--- | Albania         | Europe     | 28748      | 2831741      | 12960000      |
--- | Algeria         | Africa     | 2381741    | 37100000     | 188681000     |
--- | Andorra         | Europe     | 468        | 78115        | 3712000       |
--- | Angola          | Africa     | 1246700    | 20609294     | 100990000     |
--- +-----------------+------------+------------+--------------+---------------+
--- A country is big if it has an area of bigger than 3 million square km or a population of more than 25 million.
+-- +-------------+---------+
+-- | Column Name | Type    |
+-- +-------------+---------+
+-- | id          | int     |
+-- | name        | varchar |
+-- | referee_id  | int     |
+-- +-------------+---------+
+-- id is the primary key column for this table.
+-- Each row of this table indicates the id of a customer, their name, and the id of the customer who referred them.
 
--- Write a SQL solution to output big countries' name, population and area.
 
--- For example, according to the above table, we should output:
+-- Write an SQL query to report the IDs of the customer that are not referred by the customer with id = 2.
 
--- +--------------+-------------+--------------+
--- | name         | population  | area         |
--- +--------------+-------------+--------------+
--- | Afghanistan  | 25500100    | 652230       |
--- | Algeria      | 37100000    | 2381741      |
--- +--------------+-------------+--------------+
+-- Return the result table in any order.
 
-SELECT name,population,area
-FROM World
-WHERE area > 3000000 or population > 25000000;
+-- The query result format is in the following example.
 
--- A lot faster than above
--- But why would it be faster ??
--- NOTE: Both UNION and UNION ALL operators combine rows from result sets into a single result set.
---       The UNION operator removes eliminate duplicate rows, whereas the UNION ALL operator does not.
---       Because the UNION ALL operator does not remove duplicate rows, it runs faster than the UNION operator.
 
--- NOTE: The reason is that using OR in a query will often cause the Query Optimizer to abandon use of index seeks
---       and revert to scans. If you look at the execution plans for your two queries, you'll most likely see scans
---       where you are using the OR and seeks where you are using the UNION
 
-SELECT
-    name, population, area
-FROM
-    world
-WHERE
-    area >= 3000000
+-- Example 1:
 
-UNION
+-- Input:
+-- Customer table:
+-- +----+------+------------+
+-- | id | name | referee_id |
+-- +----+------+------------+
+-- | 1  | Will | null       |
+-- | 2  | Jane | null       |
+-- | 3  | Alex | 2          |
+-- | 4  | Bill | null       |
+-- | 5  | Zack | 1          |
+-- | 6  | Mark | 2          |
+-- +----+------+------------+
+-- Output:
+-- +------+
+-- | name |
+-- +------+
+-- | Will |
+-- | Jane |
+-- | Bill |
+-- | Zack |
+-- +------+
 
-SELECT
-    name, population, area
-FROM
-    world
-WHERE
-    population >= 25000000
-;
+SELECT name FROM customer WHERE referee_id = NULL OR referee_id <> 2;
