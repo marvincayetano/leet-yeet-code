@@ -61,3 +61,8 @@
 -- 353,072
 -- Submissions
 -- 554,479
+
+SELECT A.Name As Customers
+FROM Customers A
+WHERE NOT EXISTS
+(SELECT B.CustomerId FROM Orders B WHERE B.CustomerId = A.Id)
