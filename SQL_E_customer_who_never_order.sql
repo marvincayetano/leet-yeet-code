@@ -66,3 +66,6 @@ SELECT A.Name As Customers
 FROM Customers A
 WHERE NOT EXISTS
 (SELECT B.CustomerId FROM Orders B WHERE B.CustomerId = A.Id)
+
+-- NOTE: I don't see other answers other than this
+-- this only is 28% faster than everybody else
