@@ -1,54 +1,49 @@
--- There is a table World
+-- Table: Employees
 
--- +-----------------+------------+------------+--------------+---------------+
--- | name            | continent  | area       | population   | gdp           |
--- +-----------------+------------+------------+--------------+---------------+
--- | Afghanistan     | Asia       | 652230     | 25500100     | 20343000      |
--- | Albania         | Europe     | 28748      | 2831741      | 12960000      |
--- | Algeria         | Africa     | 2381741    | 37100000     | 188681000     |
--- | Andorra         | Europe     | 468        | 78115        | 3712000       |
--- | Angola          | Africa     | 1246700    | 20609294     | 100990000     |
--- +-----------------+------------+------------+--------------+---------------+
--- A country is big if it has an area of bigger than 3 million square km or a population of more than 25 million.
+-- +-------------+---------+
+-- | Column Name | Type    |
+-- +-------------+---------+
+-- | employee_id | int     |
+-- | name        | varchar |
+-- | salary      | int     |
+-- +-------------+---------+
+-- employee_id is the primary key for this table.
+-- Each row of this table indicates the employee ID, employee name, and salary.
 
--- Write a SQL solution to output big countries' name, population and area.
 
--- For example, according to the above table, we should output:
+-- Write an SQL query to calculate the bonus of each employee. The bonus of an employee is 100% of their salary if the ID of the employee is an odd number and the employee name does not start with the character 'M'. The bonus of an employee is 0 otherwise.
 
--- +--------------+-------------+--------------+
--- | name         | population  | area         |
--- +--------------+-------------+--------------+
--- | Afghanistan  | 25500100    | 652230       |
--- | Algeria      | 37100000    | 2381741      |
--- +--------------+-------------+--------------+
+-- Return the result table ordered by employee_id.
 
-SELECT name,population,area
-FROM World
-WHERE area > 3000000 or population > 25000000;
+-- The query result format is in the following example.
 
--- A lot faster than above
--- But why would it be faster ??
--- NOTE: Both UNION and UNION ALL operators combine rows from result sets into a single result set.
---       The UNION operator removes eliminate duplicate rows, whereas the UNION ALL operator does not.
---       Because the UNION ALL operator does not remove duplicate rows, it runs faster than the UNION operator.
 
--- NOTE: The reason is that using OR in a query will often cause the Query Optimizer to abandon use of index seeks
---       and revert to scans. If you look at the execution plans for your two queries, you'll most likely see scans
---       where you are using the OR and seeks where you are using the UNION
 
-SELECT
-    name, population, area
-FROM
-    world
-WHERE
-    area >= 3000000
+-- Example 1:
 
-UNION
+-- Input:
+-- Employees table:
+-- +-------------+---------+--------+
+-- | employee_id | name    | salary |
+-- +-------------+---------+--------+
+-- | 2           | Meir    | 3000   |
+-- | 3           | Michael | 3800   |
+-- | 7           | Addilyn | 7400   |
+-- | 8           | Juan    | 6100   |
+-- | 9           | Kannon  | 7700   |
+-- +-------------+---------+--------+
+-- Output:
+-- +-------------+-------+
+-- | employee_id | bonus |
+-- +-------------+-------+
+-- | 2           | 0     |
+-- | 3           | 0     |
+-- | 7           | 7400  |
+-- | 8           | 0     |
+-- | 9           | 7700  |
+-- +-------------+-------+
+-- Explanation:
+-- The employees with IDs 2 and 8 get 0 bonus because they have an even employee_id.
+-- The employee with ID 3 gets 0 bonus because their name starts with 'M'.
+-- -- The rest of the employees get a 100% bonus.
 
-SELECT
-    name, population, area
-FROM
-    world
-WHERE
-    population >= 25000000
-;
