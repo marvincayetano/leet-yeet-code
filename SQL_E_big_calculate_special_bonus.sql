@@ -47,3 +47,4 @@
 -- The employee with ID 3 gets 0 bonus because their name starts with 'M'.
 -- -- The rest of the employees get a 100% bonus.
 
+SELECT employee_id, IF(employee_id % 2 != 0 and SUBSTRING(name, 1, 1) != 'M', salary, 0) AS bonus from Employees
