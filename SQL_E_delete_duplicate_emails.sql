@@ -38,7 +38,7 @@
 -- +----+------------------+
 -- Explanation: john@example.com is repeated two times. We keep the row with the smallest Id = 1.
 
-SELECT * FROM Person p INNER JOIN Person p2 ON  p.Email = p2.Email AND  p.Id > p2.Id;
+DELETE * FROM Person p INNER JOIN Person p2 ON  p.Email = p2.Email AND  p.Id > p2.Id;
 
 DELETE
   p1
