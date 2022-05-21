@@ -1,19 +1,20 @@
--- Table: Employees
+-- Table Activities:
 
 -- +-------------+---------+
 -- | Column Name | Type    |
 -- +-------------+---------+
--- | employee_id | int     |
--- | name        | varchar |
--- | salary      | int     |
+-- | sell_date   | date    |
+-- | product     | varchar |
 -- +-------------+---------+
--- employee_id is the primary key for this table.
--- Each row of this table indicates the employee ID, employee name, and salary.
+-- There is no primary key for this table, it may contain duplicates.
+-- Each row of this table contains the product name and the date it was sold in a market.
 
 
--- Write an SQL query to calculate the bonus of each employee. The bonus of an employee is 100% of their salary if the ID of the employee is an odd number and the employee name does not start with the character 'M'. The bonus of an employee is 0 otherwise.
+-- Write an SQL query to find for each date the number of different products sold and their names.
 
--- Return the result table ordered by employee_id.
+-- The sold products names for each date should be sorted lexicographically.
+
+-- Return the result table ordered by sell_date.
 
 -- The query result format is in the following example.
 
@@ -22,29 +23,27 @@
 -- Example 1:
 
 -- Input:
--- Employees table:
--- +-------------+---------+--------+
--- | employee_id | name    | salary |
--- +-------------+---------+--------+
--- | 2           | Meir    | 3000   |
--- | 3           | Michael | 3800   |
--- | 7           | Addilyn | 7400   |
--- | 8           | Juan    | 6100   |
--- | 9           | Kannon  | 7700   |
--- +-------------+---------+--------+
+-- Activities table:
+-- +------------+------------+
+-- | sell_date  | product     |
+-- +------------+------------+
+-- | 2020-05-30 | Headphone  |
+-- | 2020-06-01 | Pencil     |
+-- | 2020-06-02 | Mask       |
+-- | 2020-05-30 | Basketball |
+-- | 2020-06-01 | Bible      |
+-- | 2020-06-02 | Mask       |
+-- | 2020-05-30 | T-Shirt    |
+-- +------------+------------+
 -- Output:
--- +-------------+-------+
--- | employee_id | bonus |
--- +-------------+-------+
--- | 2           | 0     |
--- | 3           | 0     |
--- | 7           | 7400  |
--- | 8           | 0     |
--- | 9           | 7700  |
--- +-------------+-------+
+-- +------------+----------+------------------------------+
+-- | sell_date  | num_sold | products                     |
+-- +------------+----------+------------------------------+
+-- | 2020-05-30 | 3        | Basketball,Headphone,T-shirt |
+-- | 2020-06-01 | 2        | Bible,Pencil                 |
+-- | 2020-06-02 | 1        | Mask                         |
+-- +------------+----------+------------------------------+
 -- Explanation:
--- The employees with IDs 2 and 8 get 0 bonus because they have an even employee_id.
--- The employee with ID 3 gets 0 bonus because their name starts with 'M'.
--- -- The rest of the employees get a 100% bonus.
-
-SELECT employee_id, IF(employee_id % 2 != 0 and SUBSTRING(name, 1, 1) != 'M', salary, 0) AS bonus from Employees
+-- For 2020-05-30, Sold items were (Headphone, Basketball, T-shirt), we sort them lexicographically and separate them by a comma.
+-- For 2020-06-01, Sold items were (Pencil, Bible), we sort them lexicographically and separate them by a comma.
+-- For 2020-06-02, the Sold item is (Mask), we just return it.
