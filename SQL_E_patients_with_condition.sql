@@ -41,3 +41,6 @@
 -- | 4          | George       | ACNE DIAB100 |
 -- +------------+--------------+--------------+
 -- Explanation: Bob and George both have a condition that starts with DIAB1.
+
+-- # Write your MySQL query statement below
+-- Select * from Patients where conditions like '%DIAB1%';
