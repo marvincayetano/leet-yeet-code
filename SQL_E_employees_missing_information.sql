@@ -62,3 +62,17 @@
 -- Employees 1, 2, 4, and 5 are working at this company.
 -- The name of employee 1 is missing.
 -- The salary of employee 2 is missing.
+
+-- 15%
+select e.employee_id
+    from Employees e
+    left join Salaries s
+    using(employee_id)
+    where salary is null
+union all
+select s.employee_id
+    from Employees e
+    right join Salaries s
+    using(employee_id)
+    where name is null
+order by employee_id;
