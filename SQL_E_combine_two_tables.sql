@@ -61,9 +61,17 @@
 -- There is no address in the address table for the personId = 1 so we return null in their city and state.
 -- addressId = 1 contains information about the address of personId = 2.
 
--- Initial answer %17
+-- Initial answer %17 using left join
 -- # Write your MySQL query statement below
 SELECT FirstName, LastName, City, State
 FROM Person
 LEFT JOIN Address
 ON Person.PersonId = Address.PersonId
+
+
+-- Using union %79
+select p.FirstName, p.LastName, a.City, a.State from person p
+join address a on p.personid = a.personid
+union
+select p.FirstName, p.LastName, null as City, null as State from person p
+where not exists (select 1 from address a where p.personid = a.personid)
