@@ -60,3 +60,10 @@
 -- Explanation:
 -- There is no address in the address table for the personId = 1 so we return null in their city and state.
 -- addressId = 1 contains information about the address of personId = 2.
+
+-- Initial answer %17
+-- # Write your MySQL query statement below
+SELECT FirstName, LastName, City, State
+FROM Person
+LEFT JOIN Address
+ON Person.PersonId = Address.PersonId
