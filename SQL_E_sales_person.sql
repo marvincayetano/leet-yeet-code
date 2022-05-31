@@ -92,3 +92,12 @@
 -- +------+
 -- Explanation:
 -- According to orders 3 and 4 in the Orders table, it is easy to tell that only salesperson John and Pam have sales to company RED, so we report all the other names in the table salesperson.
+
+-- 13%
+select s.name
+from salesperson s
+where s.sales_id not in
+    (select o.sales_id
+    from orders o
+    left join company c on o.com_id = c.com_id
+    where c.name = 'RED')
