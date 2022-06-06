@@ -48,3 +48,9 @@
 -- User 8 logged into their account 2 times in 2020, once in February and once in December. We include only the latest one (December) in the result table.
 -- User 2 logged into their account 2 times but only once in 2020, so we include this login in the result table.
 -- User 14 did not login in 2020, so we do not include them in the result table.
+
+-- 80%
+select user_id , max(time_stamp) as last_stamp
+from Logins
+where time_stamp like '%2020%'
+group by user_id
