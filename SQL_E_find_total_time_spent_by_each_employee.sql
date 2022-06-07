@@ -48,3 +48,11 @@
 -- Explanation:
 -- Employee 1 has three events: two on day 2020-11-28 with a total of (32 - 4) + (200 - 55) = 173, and one on day 2020-12-03 with a total of (42 - 1) = 41.
 -- Employee 2 has two events: one on day 2020-11-28 with a total of (33 - 3) = 30, and one on day 2020-12-09 with a total of (74 - 47) = 27.
+
+-- 40%
+SELECT event_day               AS day,
+       emp_id,
+       Sum(out_time - in_time) AS total_time
+FROM   employees
+GROUP  BY 1, 2
+ORDER  BY 1, 2;
