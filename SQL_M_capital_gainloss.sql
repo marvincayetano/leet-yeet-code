@@ -62,3 +62,18 @@ select
     sum(case when operation = "Buy" then price end) as capital_gain_loss
 from stocks
 group by stock_name
+
+-- 34%
+select
+    stock_name,
+    sum(case when operation = "Sell" then price
+			else -price end) as capital_gain_loss
+from stocks
+group by stock_name
+
+-- 17%
+select
+    stock_name,
+    sum(if(operation = "Buy", -1, 1) * price) as capital_gain_loss
+from stocks
+group by stock_name
