@@ -68,3 +68,23 @@
 -- Alice's balance is (7000 + 7000 - 3000) = 11000.
 -- Bob's balance is 1000.
 -- - Charlie's balance is (6000 + 6000 - 4000) = 8000.
+
+-- 16%
+SELECT u.name AS NAME,SUM(t.amount) AS BALANCE
+FROM Transactions t LEFT JOIN Users u
+ON u.account = t.account
+GROUP BY u.account
+# Aggregate function can go directly after HAVING
+HAVING SUM(t.amount)>10000;
+
+-- 85%
+select u.name, c.balance
+from Users u
+right join
+(
+    select account, sum(amount) as balance
+    from Transactions
+    group by 1
+) c
+on u.account = c.account
+where balance > 10000;
