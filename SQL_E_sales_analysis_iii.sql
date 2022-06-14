@@ -65,3 +65,10 @@
 -- The product with id 2 was sold in the spring of 2019 but was also sold after the spring of 2019.
 -- The product with id 3 was sold after spring 2019.
 -- We return only product 1 as it is the product that was only sold in the spring of 2019.
+
+-- 86%
+select Product.product_id, product_name
+from Product left join Sales
+on Product.product_id = Sales.product_id
+group by product_id
+having min(sale_date) >= '2019-01-01' and max(sale_date) <= '2019-03-31';
