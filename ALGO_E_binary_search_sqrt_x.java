@@ -20,3 +20,12 @@
 // Constraints:
 
 // 0 <= x <= 231 - 1
+
+// 32%
+class Solution {
+    public int mySqrt(int x) {
+        if(x <= 1)
+            return x;
+        return (int)Math.floor(Math.sqrt(x));
+    }
+}
