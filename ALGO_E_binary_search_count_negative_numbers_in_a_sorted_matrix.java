@@ -20,6 +20,7 @@
 // 1 <= m, n <= 100
 // -100 <= grid[i][j] <= 100
 
+// 100%
 class Solution {
     public int countNegatives(int[][] grid) {
          int n=grid.length,m=grid[0].length, row=0, column=m - 1,ans=0;
