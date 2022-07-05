@@ -29,6 +29,7 @@ public class Solution {
     }
 }
 
+// 17% Binary search sol
 public class Solution {
     public boolean judgeSquareSum(int c) {
         for (long a = 0; a * a <= c; a++) {
