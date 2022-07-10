@@ -35,6 +35,22 @@
 // All the integers of nums are unique.
 // nums is sorted and rotated between 1 and n times.
 
+// 43%
+class Solution {
+    public int findMin(int[] nums) {
+        int i=0,j=nums.length-1;
+        while(i<j)
+        {
+            int mid=i+(j-i)/2;
+            if(nums[mid]<nums[j])
+                j=mid;
+            else
+                i=mid+1;
+        }
+        return nums[i];
+    }
+}
+
 // 100% using binary search
 class Solution {
     public int findMin(int[] nums) {
