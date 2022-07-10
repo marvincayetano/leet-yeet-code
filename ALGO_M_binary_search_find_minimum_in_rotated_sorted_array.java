@@ -34,3 +34,27 @@
 // -5000 <= nums[i] <= 5000
 // All the integers of nums are unique.
 // nums is sorted and rotated between 1 and n times.
+
+// 100% using binary search
+class Solution {
+    public int findMin(int[] nums) {
+        if (nums[0] < nums[nums.length - 1]) return nums[0];
+        int left = 0, right = nums.length - 1;
+        while (left + 1< right) {
+            int mid = left + (right - left) / 2;
+            if (nums[mid] > nums[right]) {
+                left = mid;
+            } else {
+                if (nums[mid] > nums[left]) {
+                    left = mid;
+                } else {
+                    right = mid;
+                }
+            }
+        }
+        if (nums[left] <= nums[right]) {
+            return nums[left];
+        }
+        return nums[right];
+    }
+}
