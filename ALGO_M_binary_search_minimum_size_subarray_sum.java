@@ -30,6 +30,52 @@
 // Submissions
 // 1,274,683
 
+// 70%      copilot answer
+public class Solution {
+  // Get the minimum size of subarray
+  public int minSubArrayLen(int s, int[] nums) {
+    int n = nums.length;
+    int left = 0, right = 0;
+    int sum = 0;
+    int minLen = n + 1;
+    while (right < n) {
+      sum += nums[right];
+      while (sum >= s) {
+        minLen = Math.min(minLen, right - left + 1);
+        sum -= nums[left++];
+      }
+      right++;
+    }
+    return minLen == n + 1 ? 0 : minLen;
+  }
+}
+
+// 11% solution
+public class Solution {
+    public int minSubArrayLen(int s, int[] nums) {
+        int i = 1, j = nums.length, min = 0;
+        while (i <= j) {
+            int mid = (i + j) / 2;
+            if (windowExist(mid, nums, s)) {
+                j = mid - 1;
+                min = mid;
+            } else i = mid + 1;
+        }
+        return min;
+    }
+
+
+    private boolean windowExist(int size, int[] nums, int s) {
+        int sum = 0;
+        for (int i = 0; i < nums.length; i++) {
+            if (i >= size) sum -= nums[i - size];
+            sum += nums[i];
+            if (sum >= s) return true;
+        }
+        return false;
+    }
+}
+
 // 70%
 class Solution {
     public int minSubArrayLen(int s, int[] nums) {
