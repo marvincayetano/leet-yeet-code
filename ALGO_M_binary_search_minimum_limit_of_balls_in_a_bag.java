@@ -42,3 +42,30 @@
 // 21,406
 // Submissions
 // 36,085
+
+// 40% solution
+class Solution {
+    public int minimumSize(int[] nums, int maxOperations) {
+        int left = 1, right = Integer.MAX_VALUE - 1;
+        while (left <= right) {
+            int mid = left + (right - left) / 2;
+            int ops = 0;
+            for (int n : nums) {
+                ops += minOpsToReach(n, mid);
+            }
+            // System.out.println(mid + ", " + ops);
+            // mid can be smaller
+            if (ops <= maxOperations) {
+                right = mid - 1;
+            } else {
+                left = mid + 1;
+            }
+        }
+        // System.out.println(minOpsToReach(9 ,1));
+        return left;
+    }
+
+    public int minOpsToReach(int num, int target) {
+        return (num - 1) / target;
+    }
+}
