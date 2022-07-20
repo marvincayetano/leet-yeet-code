@@ -30,3 +30,37 @@
 // 30,886
 // Submissions
 // 55,105
+
+// 78% binary search solution
+class Solution {
+    public int maxDistance(int[] p, int m) {
+        Arrays.sort(p);
+        int n = p.length, l = 1, r = p[n - 1] - p[0];
+
+        while(l < r - 1) {
+            int mid = l + (r - l) / 2;
+            if(check(p, mid, m)) {
+                l = mid;
+            }
+            else {
+                r = mid - 1;
+            }
+        }
+        if(check(p, r, m)) {
+            return r;
+        }
+        return l;
+    }
+    // check if m items can be placed with minimum distance minD
+    private boolean check(int[] p, int minD, int m) {
+        int cnt = 1;
+        int next = p[0] + minD;
+        for(int i = 1; i < p.length; i++) {
+            if(p[i] >= next) {
+                cnt++;
+                next = p[i] + minD;
+            }
+        }
+        return cnt >= m;
+    }
+}
