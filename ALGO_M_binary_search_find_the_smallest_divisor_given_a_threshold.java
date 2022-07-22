@@ -27,3 +27,30 @@
 // 88,719
 // Submissions
 // 162,393
+
+// Bruteforce 21%
+class Solution {
+    public long computeSum(int[] nums, int right) {
+        long sum = 0;
+        for (int n : nums) {
+            sum += n / right + (n % right == 0 ? 0 : 1);
+        }
+        return sum;
+    }
+
+    public int smallestDivisor(int[] nums, int threshold) {
+        int left = 1, right = 2;
+        while (computeSum(nums, right) > threshold) {
+            left = right;
+            right <<= 1;
+        }
+        while (left <= right) {
+            int pivot = left + ((right - left) >> 1);
+            long num = computeSum(nums, pivot);
+
+            if (num > threshold) left = pivot + 1;
+            else right = pivot - 1;
+        }
+        return left;
+    }
+}
