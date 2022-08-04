@@ -26,3 +26,16 @@
 // 1,109,525
 // Submissions
 // 1,546,332
+
+// 23%
+class Solution {
+    public int[] sortedSquares(int[] A) {
+
+        for (int i = 0; i < A.length; i++) {
+            A[i] = A[i] * A[i];
+        }
+        Arrays.sort(A);
+        return A;
+
+    }
+}
