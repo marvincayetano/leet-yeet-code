@@ -24,3 +24,16 @@
 // 1,900,214
 // Submissions
 // 3,109,565
+
+// 97% hashmap solution
+class Solution {
+    public boolean containsDuplicate(int[] nums) {
+      HashMap<Integer, Boolean> duplicateMap = new HashMap<Integer, Boolean>();
+      for (int i = 0; i < nums.length; i++) {
+        if (duplicateMap.containsKey(nums[i])) return true;
+        duplicateMap.put(nums[i], true);
+      }
+
+      return false;
+    }
+}
