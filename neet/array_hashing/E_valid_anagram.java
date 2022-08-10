@@ -27,6 +27,7 @@
 // Submissions
 // 2,496,393
 
+// 42% solution
 class Solution {
     public boolean isAnagram(String s, String t) {
         if (s.length() != t.length()) {
