@@ -30,3 +30,20 @@
 
 
 // Follow-up: Can you come up with an algorithm that is less than O(n2) time complexity?
+
+class Solution {
+    public int[] twoSum(int[] nums, int target) {
+      HashMap<Integer, Integer> numbersMap = new HashMap<>();
+
+       for (int i = 0; i < nums.length; i++) {
+          int num = nums[i];
+          int diff = target - num;
+
+          if(numbersMap.containsKey(num)) {
+            return new int[] { numbersMap.get(num), i };
+          }
+
+          numbersMap.put(diff, i);
+       }
+    }
+}
