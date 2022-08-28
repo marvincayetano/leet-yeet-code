@@ -23,3 +23,12 @@
 // 1 <= nums.length <= 3 * 104
 // -3 * 104 <= nums[i] <= 3 * 104
 // Each element in the array appears twice except for one element which appears only once.
+
+// Answer using XOR operation 100%
+class Solution {
+     public int singleNumber(int[] nums) {
+        int ans = nums[0];
+        for (int i = 1; i < nums.length; i++) ans ^= nums[i];
+        return ans;
+    }
+}
