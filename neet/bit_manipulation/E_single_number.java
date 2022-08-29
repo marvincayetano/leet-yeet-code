@@ -24,6 +24,8 @@
 // -3 * 104 <= nums[i] <= 3 * 104
 // Each element in the array appears twice except for one element which appears only once.
 
+// The key to solve this problem is bit manipulation. XOR will return 1 only on two different bits. So if two numbers are the same, XOR will return 0. Finally only one number left.
+
 // Answer using XOR operation 100%
 class Solution {
      public int singleNumber(int[] nums) {
