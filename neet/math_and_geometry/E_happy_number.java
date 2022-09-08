@@ -38,6 +38,7 @@ class Solution {
 
         // compute square until getting duplicate value
         while (!visit.contains(n)) {
+            // HERE NOW EXPLAIN THIS
             visit.add(n);
             // using helper function to compute the sum of squares
             n = sumOfSquare(n);
