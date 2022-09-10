@@ -34,6 +34,7 @@ class Solution {
             return true;
         }
 
+        // We're using hashset because there's a chance that it loops infinitely
         Set<Integer> visit = new HashSet<Integer>();
 
         // compute square until getting duplicate value
