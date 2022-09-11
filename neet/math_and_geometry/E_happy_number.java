@@ -43,22 +43,23 @@ class Solution {
             // using helper function to compute the sum of squares
             n = sumOfSquare(n);
 
+            // Returns true if n is a happy number, and false if not.
             if (n == 1) return true;
         }
 
         return false;
     }
 
-    // public int sumOfSquare(int n) {
-    //     int output = 0;
+    public int sumOfSquare(int n) {
+        int output = 0;
 
-    //     while (n != 0) {
-    //         int digit = n % 10;
-    //         digit = digit * digit;
-    //         output += digit;
-    //         n = n / 10;
-    //     }
+        while (n != 0) {
+            int digit = n % 10;
+            digit = digit * digit;
+            output += digit;
+            n = n / 10;
+        }
 
-    //     return output;
-    // }
+        return output;
+    }
 }
