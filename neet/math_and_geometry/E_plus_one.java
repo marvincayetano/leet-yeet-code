@@ -36,3 +36,13 @@
 // 1,368,803
 // Submissions
 // 3,163,330
+
+
+// Reverse the array
+// Iterate through the array
+// If the current element is 9, set it to 0
+// If the current element is not 9, increment it by 1 and return the array
+// If the array is all 9s, create a new array of size digits.length + 1 and set the first element to 1 and return the array
+// Reverse the array and return it
+// Time: O(n)
+// Space: O(n)
