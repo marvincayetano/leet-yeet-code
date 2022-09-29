@@ -26,6 +26,7 @@
 // 0 <= nums[i] <= n
 // All the numbers of nums are unique.
 
+// Follow up: Could you implement a solution using only O(1) extra space complexity and O(n) runtime complexity?
 class Solution {
     public int missingNumber(int[] nums) {
 
