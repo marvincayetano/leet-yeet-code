@@ -30,5 +30,8 @@
 class Solution {
     public int missingNumber(int[] nums) {
 
+
+
+      // MAYBE A HASHMAP that checks each value
     }
 }
