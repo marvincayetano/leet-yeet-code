@@ -30,3 +30,9 @@
 // 1,589,617
 // Submissions
 // 3,661,957
+
+class Solution {
+    public boolean isPalindrome(String s) {
+
+    }
+}
