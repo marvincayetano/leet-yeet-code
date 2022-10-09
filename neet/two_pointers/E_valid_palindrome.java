@@ -34,6 +34,7 @@
 class Solution {
     public boolean isPalindrome(String s) {
 
+      // FIlter useless characters first
       // Could be a hash
     }
 }
