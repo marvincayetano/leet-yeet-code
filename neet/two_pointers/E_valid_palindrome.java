@@ -34,7 +34,9 @@
 class Solution {
     public boolean isPalindrome(String s) {
 
-      // FIlter useless characters first
+      // FIlter useless characters first and put it in this variable
+      let newStr = '';
+
       // Could be a hash
     }
 }
