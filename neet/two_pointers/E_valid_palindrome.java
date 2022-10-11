@@ -31,12 +31,30 @@
 // Submissions
 // 3,661,957
 
+// First solution
 class Solution {
     public boolean isPalindrome(String s) {
+
+      if(s.length() == 0) return false;
 
       // FIlter useless characters first and put it in this variable
       let newStr = '';
 
-      // Could be a hash
+      // Filter out all the non-alphanumeric characters
+      for(let i = 0; i < s.length; i++) {
+        if(s[i].match(/[a-zA-Z0-9]/)) {
+          newStr += s[i].toLowerCase();
+        }
+      }
+
+      // Now we have a string with only alphanumeric characters
+
+      // Check if it is a palindrome
+      if(newStr === newStr.reverse()) {
+        return true;
+      } else {
+        return false;
+      }
+
     }
 }
