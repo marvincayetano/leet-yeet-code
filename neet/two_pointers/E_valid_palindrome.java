@@ -60,17 +60,32 @@ class Solution {
 }
 
 // Using two pointers to check left and right characters
-class Solution {
-    public boolean isPalindrome(String s) {
+public boolean isPalindrome(String s) {
 
-      if(s.length() == 0) return false;
+    int i = 0;
+    int j = s.length() - 1;
+    while (i < j) {
 
-      //  use ascii to check if character is alphanumeric
+        Character start = s.charAt(i);
+        Character end = s.charAt(j);
 
-      // while pointer is not alphanumeric increment/decrement
+        if (!Character.isLetterOrDigit(start)) {
+            i++;
+            continue;
+        }
+
+        if (!Character.isLetterOrDigit(end)) {
+            j--;
+            continue;
+        }
+
+        if (Character.toLowerCase(start) != Character.toLowerCase(end)) {
+            return false;
+        }
+
+        i++;
+        j--;
     }
 
-    private isAlphanumberic(Char char) {
-      // check if character is alphanumeric
-    }
+    return true;
 }
