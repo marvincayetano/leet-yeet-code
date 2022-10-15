@@ -36,3 +36,9 @@
 // 1,252,947
 // Submissions
 // 2,087,524
+
+class Solution {
+    public int[] twoSum(int[] numbers, int target) {
+
+    }
+}
