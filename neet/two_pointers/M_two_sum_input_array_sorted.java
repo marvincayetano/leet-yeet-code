@@ -37,6 +37,11 @@
 // Submissions
 // 2,087,524
 
+// SOLUTION EXPLANATION
+// [1,2,3,4,5,6,7,8,9,10]
+// since the array is sorted, we can use two pointers to find the sum of the two numbers
+// if the addition of the two numbers is less than the target, we move the left pointer to the right and vice versa
+
 class Solution {
     public int[] twoSum(int[] numbers, int target) {
 
