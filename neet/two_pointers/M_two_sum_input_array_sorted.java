@@ -44,6 +44,30 @@
 
 class Solution {
     public int[] twoSum(int[] numbers, int target) {
+      // Left pointer
+      int l = 0;
+      // Right pointer
+      int r = numbers.length - 1;
 
+      // Loop until the left pointer is less than the right pointer
+      while(l < r) {
+        const currentSum = numbers[l] + numbers[r];
+
+        // If the currentSum is greater than the target, we move the right pointer to the left
+        if(currentSum > target) {
+          r = r - 1;
+
+        // If the currentSum is less than the target, we move the left pointer to the right
+        } else if(currentSum < target) {
+          l = l + 1;
+
+        // If the current sum is equal to the target, return the indices
+        } else {
+          // We added 1 because the indices are 1-indexed and not 0-indexed as leetcode expects
+          return [l + 1, r + 1];
+        }
+
+
+      }
     }
 }
