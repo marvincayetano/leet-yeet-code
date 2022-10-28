@@ -51,7 +51,7 @@ class Solution {
 
       // Loop until the left pointer is less than the right pointer
       while(l < r) {
-        const currentSum = numbers[l] + numbers[r];
+        int currentSum = numbers[l] + numbers[r];
 
         // If the currentSum is greater than the target, we move the right pointer to the left
         if(currentSum > target) {
@@ -64,10 +64,11 @@ class Solution {
         // If the current sum is equal to the target, return the indices
         } else {
           // We added 1 because the indices are 1-indexed and not 0-indexed as leetcode expects
-          return [l + 1, r + 1];
+          return new int[] {l + 1, r + 1};
         }
 
-
       }
+
+      return new int[] {};
     }
 }
