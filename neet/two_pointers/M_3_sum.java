@@ -35,6 +35,9 @@
 // Submissions
 // 7,200,359
 
+
+// Prerequisite: Two Sum, two sum II
+
 class Solution {
     public List<List<Integer>> threeSum(int[] nums) {
 
