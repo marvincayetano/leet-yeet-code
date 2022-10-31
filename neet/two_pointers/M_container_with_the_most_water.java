@@ -29,3 +29,9 @@
 // 1,815,122
 // Submissions
 // 3,341,612
+
+class Solution {
+    public int maxArea(int[] height) {
+
+    }
+}
