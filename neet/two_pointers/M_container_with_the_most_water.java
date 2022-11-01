@@ -33,5 +33,6 @@
 class Solution {
     public int maxArea(int[] height) {
 
+      // Could be another sorting solution then use two pointers
     }
 }
