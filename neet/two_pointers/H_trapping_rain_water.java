@@ -27,5 +27,7 @@
 class Solution {
     public int maxArea(int[] height) {
 
+      // 1. Brute Force
+      // 2. Two Pointer
     }
 }
