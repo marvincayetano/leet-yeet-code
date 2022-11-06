@@ -36,3 +36,20 @@
 // -104 <= val <= 104
 // At most 104 calls will be made to add.
 // It is guaranteed that there will be at least k elements in the array when you search for the kth element.
+
+class KthLargest {
+
+    public KthLargest(int k, int[] nums) {
+
+    }
+
+    public int add(int val) {
+
+    }
+}
+
+/**
+ * Your KthLargest object will be instantiated and called as such:
+ * KthLargest obj = new KthLargest(k, nums);
+ * int param_1 = obj.add(val);
+ */
