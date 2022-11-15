@@ -41,5 +41,8 @@
 class Solution {
     public List<List<Integer>> threeSum(int[] nums) {
       // IF we sort the array first then potentially we can use two pointers
+
+      // 2. Two Pointer
+      // 6. Sort and Two Pointer
     }
 }
