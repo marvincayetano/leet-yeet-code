@@ -45,6 +45,7 @@ class Solution {
 
       // Left pointer
       int l = 0;
+
       // Right pointer
       int r = numbers.length - 1;
 
