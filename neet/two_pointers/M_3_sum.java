@@ -41,9 +41,33 @@
 class Solution {
     public List<List<Integer>> threeSum(int[] nums) {
       // IF we sort the array first then potentially we can use two pointers
+      int[] sortedInt = nums.
 
-      // 2. Two Pointer
+      // Left pointer
+      int l = 0;
+      // Right pointer
+      int r = numbers.length - 1;
 
-      // 6. Sort and Two Pointer
+      // Loop until the left pointer is less than the right pointer
+      while(l < r) {
+        int currentSum = numbers[l] + numbers[r];
+
+        // If the currentSum is greater than the target, we move the right pointer to the left
+        if(currentSum > target) {
+          r = r - 1;
+
+        // If the currentSum is less than the target, we move the left pointer to the right
+        } else if(currentSum < target) {
+          l = l + 1;
+
+        // If the current sum is equal to the target, return the indices
+        } else {
+          // We added 1 because the indices are 1-indexed and not 0-indexed as leetcode expects
+          return new int[] {l + 1, r + 1};
+        }
+
+      }
+
+      return new int[] {};
     }
 }
