@@ -29,5 +29,8 @@ class Solution {
 
       // 1. Brute Force
       // 2. Two Pointer
+
+      // Get the minimum of two blocks
+      // Basically which block is lower
     }
 }
