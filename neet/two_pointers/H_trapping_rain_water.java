@@ -32,5 +32,8 @@ class Solution {
 
       // Get the minimum of two blocks
       // Basically which block is lower
+
+
+      // Because we can only trap water until the lower block is reached
     }
 }
