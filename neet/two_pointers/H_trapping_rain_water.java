@@ -35,5 +35,10 @@ class Solution {
 
 
       // Because we can only trap water until the lower block is reached
+      // We can only trap water until the lower block is reached
+      //
+      // 1. Get the minimum of the two blocks
+      // 2. Multiply the minimum by the distance between the two blocks
+      // 3. Compare the result to the max
     }
 }
