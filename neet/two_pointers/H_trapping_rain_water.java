@@ -41,5 +41,7 @@ class Solution {
       // 2. Multiply the minimum by the distance between the two blocks
       // 3. Compare the result to the max
       // 4. Move the pointer of the lower block
+      // 5. Repeat until the pointers meet
+
     }
 }
