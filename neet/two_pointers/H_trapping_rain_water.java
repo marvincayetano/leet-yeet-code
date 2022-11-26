@@ -55,10 +55,11 @@ class Solution {
         int max = heights[0]
         int c = 0;
 
-        // for (int i = 0; i < heights.length; i++) {
-        //     left[i] = Math.max(heights[i], max);
-        //     max = left[i];
-        // }
+        // >> ??
+        for (int i = 0; i < heights.length; i++) {
+            left[i] = Math.max(heights[i], max);
+            max = left[i];
+        }
 
         // max = heights[heights.length - 1];
         // for (int i = heights.length - 1; i >= 0; i--) {
