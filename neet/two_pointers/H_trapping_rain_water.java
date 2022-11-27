@@ -50,8 +50,9 @@ class Solution {
 class Solution {
 
     public int trap(int[] heights) {
-        // int left[] = new int[heights.length], right[] = new int[heights.length], max =
-        //     heights[0], c = 0;
+        int left[] = new int[heights.length];
+        int right[] = new int[heights.length];
+        int max = heights[0], c = 0;
 
         // for (int i = 0; i < heights.length; i++) {
         //     left[i] = Math.max(heights[i], max);
