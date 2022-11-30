@@ -65,6 +65,7 @@ class Solution {
 
         // If the current sum is equal to the target, return the indices
         } else {
+
           // We added 1 because the indices are 1-indexed and not 0-indexed as leetcode expects
           return new int[] {l + 1, r + 1};
         }
