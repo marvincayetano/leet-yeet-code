@@ -26,3 +26,9 @@
 
 // 0 <= s.length <= 5 * 104
 // s consists of English letters, digits, symbols and spaces.
+
+class Solution {
+    public int lengthOfLongestSubstring(String s) {
+
+    }
+}
