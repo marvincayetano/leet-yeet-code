@@ -61,6 +61,7 @@ class Solution {
                         miniSol.add(nums[left]);
                         miniSol.add(nums[right]);
                         sol.add(miniSol);
+                        // To reduce the complexity, we need to skip the duplicate elements
                         while (left < right && nums[left] == nums[left + 1]) {
                             left++;
                         }
