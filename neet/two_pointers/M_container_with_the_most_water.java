@@ -31,9 +31,24 @@
 // Submissions
 // 3,341,612
 
+// 1. Brute force solution for this is checking all the possible combinations which is O(n^2)
 class Solution {
-    public int maxArea(int[] height) {
 
-      // Could be another sorting solution then use two pointers
+    public int maxArea(int[] height) {
+        int left = 0;
+        int right = height.length - 1;
+        int res = 0;
+
+        while (left < right) {
+            int containerLength = right - left;
+            int area = containerLength * Math.min(height[left], height[right]);
+            res = Math.max(res, area);
+            if (height[left] < height[right]) {
+                left++;
+            } else {
+                right--;
+            }
+        }
+        return res;
     }
 }
