@@ -29,6 +29,7 @@
 
 class Solution {
     public int lengthOfLongestSubstring(String s) {
+      // This uses the sliding window technique
 
     }
 }
