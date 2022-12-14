@@ -33,5 +33,8 @@ class Solution {
       // We use a set to keep track of the characters in the current window
        HashSet<Character> set = new HashSet<>();
 
+      // We use two pointers to keep track of the window
+
+
     }
 }
