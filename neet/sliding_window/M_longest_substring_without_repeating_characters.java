@@ -34,6 +34,11 @@ class Solution {
        HashSet<Character> set = new HashSet<>();
 
       // We use two pointers to keep track of the window
+      // The left pointer is the start of the window
+      // The right pointer is the end of the window
+      // We use the right pointer to expand the window
+      // We use the left pointer to shrink the window
+      // We use the set to keep track of the characters in the current window
 
 
     }
