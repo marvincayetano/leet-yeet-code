@@ -22,3 +22,9 @@
 // 1 <= s.length <= 105
 // s consists of only uppercase English letters.
 // 0 <= k <= s.length
+
+class Solution {
+    public int characterReplacement(String s, int k) {
+
+    }
+}
