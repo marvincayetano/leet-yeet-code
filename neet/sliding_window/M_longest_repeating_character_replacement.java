@@ -25,6 +25,7 @@
 
 class Solution {
     public int characterReplacement(String s, int k) {
+      // Copilot comment: sliding window with two pointers and a hashmap to keep track of the frequency of each character
 
     }
 }
