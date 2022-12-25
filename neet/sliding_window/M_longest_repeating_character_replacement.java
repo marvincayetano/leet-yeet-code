@@ -25,7 +25,22 @@
 
 class Solution {
     public int characterReplacement(String s, int k) {
-      // Copilot comment: sliding window with two pointers and a hashmap to keep track of the frequency of each character
-
+      // Copilot solution
+      int left = 0;
+      int right = 0;
+      int max = 0;
+      int maxCharCount = 0;
+      int[] charCount = new int[26];
+      while (right < s.length()) {
+        charCount[s.charAt(right) - 'A']++;
+        maxCharCount = Math.max(maxCharCount, charCount[s.charAt(right) - 'A']);
+        if (right - left + 1 - maxCharCount > k) {
+          charCount[s.charAt(left) - 'A']--;
+          left++;
+        }
+        max = Math.max(max, right - left + 1);
+        right++;
+      }
+      return max;
     }
 }
