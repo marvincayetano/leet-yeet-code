@@ -23,6 +23,8 @@
 // s consists of only uppercase English letters.
 // 0 <= k <= s.length
 
+// This is a sliding window problem
+
 class Solution {
     public int characterReplacement(String s, int k) {
       // Copilot solution
