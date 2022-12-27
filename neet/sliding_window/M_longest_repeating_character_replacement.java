@@ -46,3 +46,5 @@ class Solution {
       return max;
     }
 }
+
+// We want to replace the less frequent characters
