@@ -31,7 +31,7 @@ class Solution {
     public int lengthOfLongestSubstring(String s) {
       // This uses the sliding window technique
       // We use a set to keep track of the characters in the current window
-       HashSet<Character> set = new HashSet<>();
+      HashSet<Character> set = new HashSet<>();
 
       // We use two pointers to keep track of the window
       // The left pointer is the start of the window
