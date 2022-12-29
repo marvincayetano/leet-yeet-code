@@ -26,3 +26,8 @@
 // This is a sliding window problem
 
 // We want to replace the less frequent characters
+class Solution {
+    public int characterReplacement(String s, int k) {
+
+    }
+}
