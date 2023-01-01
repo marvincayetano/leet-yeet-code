@@ -28,3 +28,9 @@
 // 1 <= nums.length <= 105
 // -104 <= nums[i] <= 104
 // 1 <= k <= nums.length
+
+class Solution {
+    public int[] maxSlidingWindow(int[] nums, int k) {
+
+    }
+}
