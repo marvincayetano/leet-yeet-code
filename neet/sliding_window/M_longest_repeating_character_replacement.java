@@ -26,6 +26,17 @@
 // This is a sliding window problem
 
 // We want to replace the less frequent characters
+
+// Two possible solutions both linear
+
+// O(26 n) solution
+class Solution {
+    public int characterReplacement(String s, int k) {
+
+    }
+}
+
+// O(n) solution
 class Solution {
     public int characterReplacement(String s, int k) {
 
