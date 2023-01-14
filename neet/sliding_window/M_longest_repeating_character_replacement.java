@@ -29,13 +29,6 @@
 
 // Two possible solutions both linear
 
-// O(26 n) solution
-class Solution {
-    public int characterReplacement(String s, int k) {
-
-    }
-}
-
 // O(n) solution
 class Solution {
 
