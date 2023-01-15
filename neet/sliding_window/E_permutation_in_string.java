@@ -14,14 +14,17 @@
 // Input: s1 = "ab", s2 = "eidboaoo"
 // Output: false
 
+// Constraints:
+
+// 1 <= s1.length, s2.length <= 104
+// s1 and s2 consist of lowercase English letters.
+
+// MEANING
+// - a way, especially one of several possible variations, in which a set or number of things can be ordered or arranged.
+// "his thoughts raced ahead to fifty different permutations of what he must do"
+
 class Solution {
     public boolean checkInclusion(String s1, String s2) {
 
     }
 }
-
-
-// Constraints:
-
-// 1 <= s1.length, s2.length <= 104
-// s1 and s2 consist of lowercase English letters.
