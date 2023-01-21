@@ -36,6 +36,9 @@
 
 class Solution {
     public String minWindow(String s, String t) {
-
+      // Haves and needs hashmaps
+      // Windows expands until it contains all the characters in t
+      // Then we shrink the window until it no longer contains all the characters in t
+      // Then we expand the window again to find the smallest window
     }
 }
