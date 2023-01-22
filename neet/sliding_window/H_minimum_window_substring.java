@@ -40,5 +40,7 @@ class Solution {
       // Windows expands until it contains all the characters in t
       // Then we shrink the window until it no longer contains all the characters in t
       // Then we expand the window again to find the smallest window
+
+      // Variables: Result, Length, Haves, Needs, WindowStart, WindowEnd
     }
 }
