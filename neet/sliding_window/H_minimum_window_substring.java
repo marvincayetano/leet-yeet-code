@@ -36,11 +36,6 @@
 
 class Solution {
     public String minWindow(String s, String t) {
-      // Important - MINIMUM!
-
-      // HASH MAP
-
-      // TODO: Find a way to do this in O(n) time
 
     }
 }
