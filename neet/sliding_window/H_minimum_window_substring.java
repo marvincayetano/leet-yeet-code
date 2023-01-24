@@ -42,5 +42,9 @@ class Solution {
       // Then we expand the window again to find the smallest window
 
       // Variables: Result, Length, Haves, Needs, WindowStart, WindowEnd
+
+      if(t === null || t.length() === 0) return "";
+
+
     }
 }
