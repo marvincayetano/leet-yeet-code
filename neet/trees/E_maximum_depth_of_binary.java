@@ -19,3 +19,12 @@
 
 // The number of nodes in the tree is in the range [0, 104].
 // -100 <= Node.val <= 100
+
+// Solution"
+
+public class Solution {
+    public int maxDepth(TreeNode root) {
+        if(root == null) return 0;
+        return Math.max(maxDepth(root.left), maxDepth(root.right)) + 1;
+    }
+}
