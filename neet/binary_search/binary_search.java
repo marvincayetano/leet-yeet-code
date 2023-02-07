@@ -36,3 +36,7 @@ class Solution {
     return -1;
   }
 }
+
+class Solution {
+
+}
