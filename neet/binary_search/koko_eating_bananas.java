@@ -33,3 +33,9 @@
 // 527.6K
 // Acceptance Rate
 // 51.5%
+
+
+class Solution {
+    public int minEatingSpeed(int[] piles, int h) {
+    }
+}
