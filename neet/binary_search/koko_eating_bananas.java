@@ -35,6 +35,9 @@
 // 51.5%
 
 
+// Explanation of the solution
+// https://leetcode.com/problems/koko-eating-bananas/discuss/1517241/JavaC%2B%2BPython-Binary-Search
+
 class Solution {
     public int minEatingSpeed(int[] piles, int h) {
     }
