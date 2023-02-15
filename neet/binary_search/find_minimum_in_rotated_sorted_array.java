@@ -40,3 +40,60 @@
 // 2.5M
 // Acceptance Rate
 // 48.8%
+class Solution {
+    public int findMin(int[] nums) {
+        int i=0,j=nums.length-1;
+        while(i<j)
+        {
+            int mid=i+(j-i)/2;
+            if(nums[mid]<nums[j])
+                j=mid;
+            else
+                i=mid+1;
+        }
+        return nums[i];
+    }
+}
+
+// Koko can decide her bananas-per-hour eating speed of k. Each hour, she chooses some pile of bananas and eats k bananas from that pile. If the pile has less than k bananas, she eats all of them instead and will not eat any more bananas during this hour.
+
+// Koko likes to eat slowly but still wants to finish eating all the bananas before the guards return.
+
+// Return the minimum integer k such that she can eat all the bananas within h hours.
+
+
+
+// Example 1:
+
+// Input: piles = [3,6,7,11], h = 8
+// Output: 4
+// Example 2:
+
+// Input: piles = [30,11,23,4,20], h = 5
+// Output: 30
+// Example 3:
+
+// Input: piles = [30,11,23,4,20], h = 6
+// Output: 23
+
+
+// Constraints:
+
+// 1 <= piles.length <= 104
+// piles.length <= h <= 109
+// 1 <= piles[i] <= 109
+// Accepted
+// 271.6K
+// Submissions
+// 527.6K
+// Acceptance Rate
+// 51.5%
+
+
+// Explanation of the solution
+// https://leetcode.com/problems/koko-eating-bananas/discuss/1517241/JavaC%2B%2BPython-Binary-Search
+
+class Solution {
+    public int minEatingSpeed(int[] piles, int h) {
+    }
+}
