@@ -27,5 +27,7 @@
 class Solution {
     public List<List<String>> groupAnagrams(String[] strs) {
 
+// Map to store the sorted string as key and the list of strings as value
+        // Map<String, List<String>> map = new HashMap<>();
     }
 }
