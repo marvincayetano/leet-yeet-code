@@ -26,6 +26,6 @@
 
 class Solution {
     public List<List<String>> groupAnagrams(String[] strs) {
-
-    }
+      // probably just a hashmap checking for all characters then popping and adding to the list
+   }
 }
