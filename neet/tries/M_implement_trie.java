@@ -83,6 +83,7 @@ class Trie {
         :type prefix: str
         :rtype: bool
         """
+
 # Your Trie object will be instantiated and called as such:
 # obj = Trie()
 # obj.insert(word)
