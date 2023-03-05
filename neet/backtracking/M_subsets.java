@@ -21,3 +21,9 @@
 // 1 <= nums.length <= 10
 // -10 <= nums[i] <= 10
 // All the numbers of nums are unique.
+
+class Solution {
+    public List<List<Integer>> subsets(int[] nums) {
+
+    }
+}
