@@ -38,27 +38,6 @@
 // At most 3 * 104 calls will be made to push, pop, top, and getMin.
 
 class MinStack {
-    // private Stack<Integer> stack;
-
-    public MinStack() {
-
-    }
-
-    public void push(int val) {
-
-    }
-
-    public void pop() {
-
-    }
-
-    public int top() {
-
-    }
-
-    public int getMin() {
-
-    }
 }
 
 /**
