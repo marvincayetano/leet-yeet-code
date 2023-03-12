@@ -39,6 +39,8 @@
  */
 class Solution {
     public ListNode reverseKGroup(ListNode head, int k) {
-
+      // 1. find the kth node
+      // 2. reverse the list from head to kth node
+      // 3. return the new head
     }
 }
