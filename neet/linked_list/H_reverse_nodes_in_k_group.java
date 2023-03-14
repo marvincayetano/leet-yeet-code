@@ -42,5 +42,16 @@ class Solution {
       // 1. find the kth node
       // 2. reverse the list from head to kth node
       // 3. return the new head
+
+
+      // solution
+
+      // int count = 0;
+      // ListNode curr = head;
+      // while (curr != null && count != k) {
+      //   curr = curr.next;
+      //   count++;
+      // }
+
     }
 }
