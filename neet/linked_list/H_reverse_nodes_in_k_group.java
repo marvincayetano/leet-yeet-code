@@ -53,5 +53,14 @@ class Solution {
       //   count++;
       // }
 
+      // if (count == k) {
+      //   // reverse
+      //   ListNode newHead = reverse(head, k);
+      //   // newHead.next = reverseKGroup(curr, k);
+      //   return newHead;
+      // }
+
+      // return head;
+
     }
 }
