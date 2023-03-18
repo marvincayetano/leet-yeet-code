@@ -39,4 +39,5 @@
 
 class MinStack {
   // keep track of the current minimum
+  // There's gonna be two stacks, one for the actual values, and one for the minimums
 }
