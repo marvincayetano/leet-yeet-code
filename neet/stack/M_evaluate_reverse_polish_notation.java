@@ -42,5 +42,6 @@
 class Solution {
     public int evalRPN(String[] tokens) {
 
+      // We can use a stack to keep track of the numbers
     }
 }
