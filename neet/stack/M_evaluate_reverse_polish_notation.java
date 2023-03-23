@@ -43,5 +43,6 @@ class Solution {
     public int evalRPN(String[] tokens) {
 
       // We can use a stack to keep track of the numbers
+      // If we encounter an operator, we pop the last two numbers and perform the operation
     }
 }
