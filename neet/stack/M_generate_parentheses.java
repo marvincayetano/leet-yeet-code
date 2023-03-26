@@ -21,3 +21,9 @@
 // 1.9M
 // Acceptance Rate
 // 72.5%
+
+class Solution {
+    public List<String> generateParenthesis(int n) {
+
+    }
+}
