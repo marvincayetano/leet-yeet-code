@@ -27,5 +27,8 @@ class Solution {
 
       // We can use a stack to keep track of the numbers
       // If we encounter an operator, we pop the last two numbers and perform the operation
+      // If we encounter a number, we push it to the stack
+      // If we encounter a closing bracket, we pop the last two numbers and perform the operation
+
     }
 }
