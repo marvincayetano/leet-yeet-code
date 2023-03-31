@@ -34,6 +34,7 @@ class Solution {
       // 7. If the number of open parentheses is equal to n and the number of closed parentheses is equal to n, then we have a valid parentheses
       // 8. Return the result
 
+      List<String> result = new ArrayList<>();
 
     }
 }
