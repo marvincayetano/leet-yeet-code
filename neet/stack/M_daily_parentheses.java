@@ -35,6 +35,18 @@ class Solution {
       // 8. Return the result
 
       List<String> result = new ArrayList<>();
+      helper(result, "", 0, 0, n);
+    }
 
+    public void helper(List<String> result, String current, int open, int closed, int n) {
+      if (open > closed) {
+        helper(result, current + ")", open, closed + 1, n);
+      }
+      if (open < n) {
+        helper(result, current + "(", open + 1, closed, n);
+      }
+      if (open == n && closed == n) {
+        result.add(current);
+      }
     }
 }
