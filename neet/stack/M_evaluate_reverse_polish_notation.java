@@ -46,5 +46,6 @@ class Solution {
       // If we encounter an operator, we pop the last two numbers and perform the operation
       // We then push the result back into the stack
       // At the end, we return the last number in the stack
+      // If we encounter a number, we push it to the stack
     }
 }
