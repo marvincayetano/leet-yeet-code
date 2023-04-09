@@ -20,3 +20,9 @@
 
 // 1 <= temperatures.length <= 105
 // 30 <= temperatures[i] <= 100
+
+class Solution {
+    public int[] dailyTemperatures(int[] temperatures) {
+
+    }
+}
