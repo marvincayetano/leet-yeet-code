@@ -43,3 +43,6 @@
 // 0 <= position[i] < target
 // All the values of position are unique.
 // 0 < speed[i] <= 106
+
+public class Solution {
+}
