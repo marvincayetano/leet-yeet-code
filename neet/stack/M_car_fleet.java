@@ -45,4 +45,6 @@
 // 0 < speed[i] <= 106
 
 public class Solution {
+    public int carFleet(int target, int[] position, int[] speed) {
+    }
 }
