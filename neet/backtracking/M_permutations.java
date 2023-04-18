@@ -21,3 +21,9 @@
 // 1 <= nums.length <= 6
 // -10 <= nums[i] <= 10
 // All the integers of nums are unique.
+
+class Solution {
+    public List<List<Integer>> permute(int[] nums) {
+
+    }
+}
