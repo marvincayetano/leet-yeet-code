@@ -38,3 +38,9 @@
 // 3M
 // Acceptance Rate
 // 40.1%
+
+class Solution {
+    public boolean exist(char[][] board, String word) {
+
+    }
+}
