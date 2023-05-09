@@ -39,5 +39,48 @@
 // 1,035,481
 
 public Solution {
+    // class TrieNode {
+    //     TrieNode[] children;
+    //     boolean isWord;
+    //     public TrieNode() {
+    //         children = new TrieNode[26];
+    //         isWord = false;
+    //     }
+    // }
+    // TrieNode root;
+    // public WordDictionary() {
+    //     root = new TrieNode();
+    // }
 
+    // public void addWord(String word) {
+    //     TrieNode curr = root;
+    //     for(char c : word.toCharArray()) {
+    //         if(curr.children[c - 'a'] == null) {
+    //             curr.children[c - 'a'] = new TrieNode();
+    //         }
+    //         curr = curr.children[c - 'a'];
+    //     }
+    //     curr.isWord = true;
+    // }
+
+    // public boolean search(String word) {
+    //     return dfs(word, root, 0);
+    // }
+
+    // private boolean dfs(String word, TrieNode curr, int index) {
+    //     if(index == word.length()) {
+    //         return curr.isWord;
+    //     }
+    //     char c = word.charAt(index);
+    //     if(c == '.') {
+    //         for(int i = 0; i < 26; i++) {
+    //             if(curr.children[i] != null && dfs(word, curr.children[i], index + 1)) {
+    //                 return true;
+    //             }
+    //         }
+    //         return false;
+    //     } else {
+    //         return curr.children[c - 'a'] != null && dfs(word, curr.children[c - 'a'], index + 1);
+    //     }
+    // }
 }
