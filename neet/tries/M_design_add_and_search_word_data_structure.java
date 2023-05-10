@@ -37,3 +37,7 @@
 // 447,282
 // Submissions
 // 1,035,481
+
+public Solution {
+
+}
