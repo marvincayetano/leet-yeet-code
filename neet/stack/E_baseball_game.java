@@ -14,8 +14,6 @@
 
 // The test cases are generated such that the answer and all intermediate calculations fit in a 32-bit integer and that all operations are valid.
 
-
-
 // Example 1:
 
 // Input: ops = ["5","2","C","D","+"]
@@ -50,7 +48,6 @@
 // "C" - Invalidate and remove the previous score, record is now [].
 // Since the record is empty, the total sum is 0.
 
-
 // Constraints:
 
 // 1 <= operations.length <= 1000
@@ -58,41 +55,44 @@
 // For operation "+", there will always be at least two previous scores on the record.
 // For operations "C" and "D", there will always be at least one previous score on the record.
 
+import java.util.Stack;
+
 class Solution {
-    public int calPoints(String[] operations) {
-      if(operations == null) return 0;
+  public int calPoints(String[] operations) {
+    if (operations == null)
+      return 0;
 
-      Stack<Integer> operationsOutput = new Stack<Integer>();
-      Integer total = 0;
+    Stack<Integer> operationsOutput = new Stack<Integer>();
+    Integer total = 0;
 
-      // Check if the operations is null return 0
+    // Check if the operations is null return 0
 
-      // Loop through the operations
-      // Use switch for operations
-      for(String operation: operations) {
-        switch(operation) {
-          case "C": // Invalidate and remove the previous score
-            Integer poppedNumber = operationsOutput.pop();
-            total = total - poppedNumber;
-            break;
-          case "D":
-            Integer pushedNumber = operationsOutput.push(operationsOutput.peek() * 2);
-            total = total + pushedNumber;
-            break;
-          case "+":
-            Integer number1 = operationsOutput.pop();
-            Integer number2 = operationsOutput.peek();
-            operationsOutput.push(number1);
-            operationsOutput.push(number1 + number2);
-            total = total + operationsOutput.peek();
-            break;
-          default:
-            Integer number = Integer.parseInt(operation);
-            operationsOutput.push(number);
-            total = total + number;
-        }
+    // Loop through the operations
+    // Use switch for operations
+    for (String operation : operations) {
+      switch (operation) {
+        case "C": // Invalidate and remove the previous score
+          Integer poppedNumber = operationsOutput.pop();
+          total = total - poppedNumber;
+          break;
+        case "D":
+          Integer pushedNumber = operationsOutput.push(operationsOutput.peek() * 2);
+          total = total + pushedNumber;
+          break;
+        case "+":
+          Integer number1 = operationsOutput.pop();
+          Integer number2 = operationsOutput.peek();
+          operationsOutput.push(number1);
+          operationsOutput.push(number1 + number2);
+          total = total + operationsOutput.peek();
+          break;
+        default:
+          Integer number = Integer.parseInt(operation);
+          operationsOutput.push(number);
+          total = total + number;
       }
-
-      return total;
     }
+
+    return total;
+  }
 }

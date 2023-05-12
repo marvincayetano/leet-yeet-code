@@ -2,8 +2,6 @@
 
 // Notice that the solution set must not contain duplicate triplets.
 
-
-
 // Example 1:
 
 // Input: nums = [-1,0,1,2,-1,-4]
@@ -25,7 +23,6 @@
 // Output: [[0,0,0]]
 // Explanation: The only possible triplet sums up to 0.
 
-
 // Constraints:
 
 // 3 <= nums.length <= 3000
@@ -36,49 +33,52 @@
 
 // 7,200,359
 
-
-
 // Prerequisite: Two Sum, two sum II
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.List;
 
 class Solution {
 
-    //2 pointers
-    public List<List<Integer>> threeSum(int[] nums) {
-        // IF we sort the array first then potentially we can use two pointers
-        Arrays.sort(nums);
-        LinkedList<List<Integer>> sol = new LinkedList<List<Integer>>();
+  // 2 pointers
+  public List<List<Integer>> threeSum(int[] nums) {
+    // IF we sort the array first then potentially we can use two pointers
+    Arrays.sort(nums);
+    LinkedList<List<Integer>> sol = new LinkedList<List<Integer>>();
 
-        for (int i = 0; i < nums.length - 2; i++) {
-            if (i == 0 || (i > 0 && nums[i] != nums[i - 1])) {
-                int target = 0 - nums[i];
-                int left = i + 1;
-                int right = nums.length - 1;
+    for (int i = 0; i < nums.length - 2; i++) {
+      if (i == 0 || (i > 0 && nums[i] != nums[i - 1])) {
+        int target = 0 - nums[i];
+        int left = i + 1;
+        int right = nums.length - 1;
 
-                while (left < right) {
-                    if (nums[left] + nums[right] == target) {
-                        ArrayList<Integer> miniSol = new ArrayList<>();
-                        miniSol.add(nums[i]);
-                        miniSol.add(nums[left]);
-                        miniSol.add(nums[right]);
-                        sol.add(miniSol);
-                        // To reduce the complexity, we need to skip the duplicate elements
-                        while (left < right && nums[left] == nums[left + 1]) {
-                            left++;
-                        }
-                        while (left < right && nums[right] == nums[right - 1]) {
-                            right--;
-                        }
-                        left++;
-                        right--;
-                    } else if (nums[left] + nums[right] > target) {
-                        right--;
-                    } else {
-                        left++;
-                    }
-                }
+        while (left < right) {
+          if (nums[left] + nums[right] == target) {
+            ArrayList<Integer> miniSol = new ArrayList<>();
+            miniSol.add(nums[i]);
+            miniSol.add(nums[left]);
+            miniSol.add(nums[right]);
+            sol.add(miniSol);
+            // To reduce the complexity, we need to skip the duplicate elements
+            while (left < right && nums[left] == nums[left + 1]) {
+              left++;
             }
+            while (left < right && nums[right] == nums[right - 1]) {
+              right--;
+            }
+            left++;
+            right--;
+          } else if (nums[left] + nums[right] > target) {
+            right--;
+          } else {
+            left++;
+          }
         }
-
-        return sol;
+      }
     }
+
+    return sol;
+  }
 }
