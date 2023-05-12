@@ -57,3 +57,42 @@
 // operations[i] is "C", "D", "+", or a string representing an integer in the range [-3 * 104, 3 * 104].
 // For operation "+", there will always be at least two previous scores on the record.
 // For operations "C" and "D", there will always be at least one previous score on the record.
+
+class Solution {
+    public int calPoints(String[] operations) {
+      if(operations == null) return 0;
+
+      Stack<Integer> operationsOutput = new Stack<Integer>();
+      Integer total = 0;
+
+      // Check if the operations is null return 0
+
+      // Loop through the operations
+      // Use switch for operations
+      for(String operation: operations) {
+        switch(operation) {
+          case "C": // Invalidate and remove the previous score
+            Integer poppedNumber = operationsOutput.pop();
+            total = total - poppedNumber;
+            break;
+          case "D":
+            Integer pushedNumber = operationsOutput.push(operationsOutput.peek() * 2);
+            total = total + pushedNumber;
+            break;
+          case "+":
+            Integer number1 = operationsOutput.pop();
+            Integer number2 = operationsOutput.peek();
+            operationsOutput.push(number1);
+            operationsOutput.push(number1 + number2);
+            total = total + operationsOutput.peek();
+            break;
+          default:
+            Integer number = Integer.parseInt(operation);
+            operationsOutput.push(number);
+            total = total + number;
+        }
+      }
+
+      return total;
+    }
+}
