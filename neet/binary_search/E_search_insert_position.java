@@ -19,6 +19,55 @@
 
 class Solution {
   public int searchInsert(int[] nums, int target) {
+    int left = 0;
+    int right = nums.length - 1;
+    int middle = 0;
 
+    while (left <= right) {
+      middle = left + ((right - left) / 2);
+      // This is basically binary search
+      // but instead of returning -1 if the target is not found
+      // return the middle index
+
+      if (target > nums[middle]) {
+        left = middle + 1;
+      } else if (target < nums[middle]) {
+        right = middle - 1;
+      } else {
+        return middle;
+      }
+    }
+
+    return left;
+  }
+}
+
+class Solution2 {
+  public int searchInsert(int[] nums, int target) {
+    int left = 0;
+    int right = nums.length - 1;
+    int middle = 0;
+
+    if (target < nums[0])
+      return 0;
+    if (target > nums[nums.length - 1])
+      return nums.length;
+
+    while (left <= right) {
+      middle = left + ((right - left) / 2);
+      // This is basically binary search
+      // but instead of returning -1 if the target is not found
+      // return the middle index
+
+      if (target > nums[middle]) {
+        left = middle + 1;
+      } else if (target < nums[middle]) {
+        right = middle - 1;
+      } else {
+        return middle;
+      }
+    }
+
+    return left + 1;
   }
 }
