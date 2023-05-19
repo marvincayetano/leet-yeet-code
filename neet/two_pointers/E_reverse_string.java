@@ -1,7 +1,7 @@
 // Solution using two pointers
 class Solution {
   public void reverseString(char[] s) {
-    if (s.length <= 1)
+    if (s.length == 1)
       return;
 
     int left = 0;
@@ -16,13 +16,6 @@ class Solution {
       left += 1;
       right -= 1;
     }
-
-  }
-}
-
-// Solution using two pointers
-class Solution {
-  public void reverseString(char[] s) {
 
   }
 }
