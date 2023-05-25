@@ -1,9 +1,38 @@
-// Given an array of integers nums and an integer target, return indices of the
-// two numbers such that they add up to target.
+import java.util.LinkedList;
+import java.util.Queue;
 
-// You may assume that each input would have exactly one solution, and you may
-// not use the same element twice.
+class Solution {
+  public boolean isSubsequence(String s, String t) {
+    if (s.length() == 0) {
+      return true;
+    }
 
-// You can return the answer in any order.
+    Queue<Character> queue = new LinkedList<Character>();
 
-// Example 1:
+    for (char c : s.toCharArray()) {
+      queue.add(c);
+    }
+
+    for (char c : t.toCharArray()) {
+      if (queue.isEmpty()) {
+        return true;
+      }
+
+      if (c == queue.peek()) {
+        queue.poll();
+      }
+    }
+
+    if (queue.isEmpty()) {
+      return true;
+    }
+
+    return false;
+  }
+}
+
+class Solution {
+  public boolean isSubsequence(String s, String t) {
+
+  }
+}
