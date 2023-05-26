@@ -1,8 +1,13 @@
-// 1 <= strs.length <= 104
-// 0 <= strs[i].length <= 100
-// strs[i] consists of lowercase English letters.
+import java.util.ArrayList;
+import java.util.List;
 
 class Solution {
   public List<List<String>> groupAnagrams(String[] strs) {
+    List<List<String>> groupAnagrams = new ArrayList<List<String>>();
+
+    for (String str : strs) {
+    }
+
+    return groupAnagrams;
   }
 }
