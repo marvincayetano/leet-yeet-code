@@ -1,3 +1,5 @@
+// TODO: Solve using min heap
+// We can pop the min element from the heap if the size of heap is greater than k
 class KthLargest {
 
   public KthLargest(int k, int[] nums) {
