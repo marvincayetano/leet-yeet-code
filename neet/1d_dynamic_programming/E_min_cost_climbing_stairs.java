@@ -1,5 +1,6 @@
 // possible solution to this is to use a dp array to store the minimum cost to reach the ith step
 // Always do decision tree to solve dp problems
+// TODO: understand this solution
 class Solution {
   public int minCostClimbingStairs(int[] cost) {
     int[] res = new int[cost.length + 1];
