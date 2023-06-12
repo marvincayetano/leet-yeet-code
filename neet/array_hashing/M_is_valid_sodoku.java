@@ -1,1 +1,3 @@
 // TODO THIS
+
+public Solution {}
