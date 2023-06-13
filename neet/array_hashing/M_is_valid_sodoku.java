@@ -1,3 +1,2 @@
-// TODO THIS
-
-public Solution {}
+public Solution {
+}
