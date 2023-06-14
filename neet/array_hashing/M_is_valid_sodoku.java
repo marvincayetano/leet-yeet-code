@@ -1,2 +1,3 @@
-public Solution {
+// TODO:
+public class Solution {
 }
