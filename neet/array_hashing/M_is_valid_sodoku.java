@@ -1,3 +1,5 @@
-// TODO:
-public class Solution {
+class Solution {
+  public boolean isValidSudoku(char[][] board) {
+
+  }
 }
