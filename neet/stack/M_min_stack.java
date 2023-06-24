@@ -1,5 +1,6 @@
 class MinStack {
 
+  // we can use two stacks to implement this
   public MinStack() {
 
   }
