@@ -11,7 +11,8 @@ class Solution {
 
     // Reducing the length to 2 because of left and right pointers
     for (int i = 0; i < nums.length - 2; i++) {
-      if (i == 0) {
+      // We want to skip duplicates for i > 0
+      if (i == 0 || (i > 0 && nums[i] != nums[i - 1])) {
         int left = i + 1;
         int right = nums.length - 1;
         int target = 0 - nums[i]; // Target because we need to make this 0. We can use this to compare with sum as
