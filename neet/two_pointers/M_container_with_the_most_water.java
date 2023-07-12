@@ -3,3 +3,15 @@
 // Whichever has the least value we get the power of that
 // We save this value to a variable and then we move the pointer
 // Which pointer? The one with the least value of the two (left and right)
+
+class Solution {
+
+  public int maxArea(int[] height) {
+    int left = 0;
+    int right = height.length - 1;
+    int res = 0;
+    while (left < right) {
+    }
+    return res;
+  }
+}
