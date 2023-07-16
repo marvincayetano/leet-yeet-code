@@ -2,6 +2,7 @@
 // If we find a number we push that to the stack
 // Otherwise we do the operation and pop twice. We're expecting to have two numbers in the stack.
 // We use those numbers to do the operation and push the result back to the stack.
+// The stack that only increases is called a monotonic increasing stack.
 
 import java.util.Stack;
 
