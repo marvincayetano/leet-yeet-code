@@ -6,3 +6,5 @@
 // fleet
 // For example if the leader is slower than the follower, the follower will
 // change its speed
+
+// Single car is also a car fleet
