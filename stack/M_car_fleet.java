@@ -8,3 +8,5 @@
 // change its speed
 
 // Single car is also a car fleet
+
+// Determine the number of car fleets is the problem
