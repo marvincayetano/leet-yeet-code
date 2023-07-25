@@ -14,6 +14,8 @@
 // If the stack is not empty and the time is less than the top of the stack
 // then we continue, otherwise we push the time to the stack
 
+// The car fleet number is the stack length
+
 // Single car is also a car fleet
 
 // Determine the number of car fleets is the problem
