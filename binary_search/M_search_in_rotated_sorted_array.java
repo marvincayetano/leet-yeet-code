@@ -22,7 +22,7 @@ class Solution {
           r = mid - 1;
         }
       } else {// right sorted // It means we're looking for a value between the mid and right
-        if (target < nums[mid] || target > nums[r]) {
+        if (target < nums[mid] || target > nums[r]) { // It means we're looking for a value in the left part
           r = mid - 1;
         } else {
           l = mid + 1;
