@@ -21,8 +21,8 @@ class Solution {
         } else {
           r = mid - 1;
         }
-      } else {// right sorted
-        if (target < nums[mid] || target > nums[r]) { // It means we're looking for a value between the mid and right
+      } else {// right sorted // It means we're looking for a value between the mid and right
+        if (target < nums[mid] || target > nums[r]) {
           r = mid - 1;
         } else {
           l = mid + 1;
