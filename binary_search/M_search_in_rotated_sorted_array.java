@@ -15,13 +15,16 @@ class Solution {
       }
 
       // left sorted
-      if (nums[l] <= nums[mid]) { // We're looking for a value between the mid and left
+      if (nums[l] <= nums[mid]) { // It means order is not rotated. We're looking for a value between the mid and
+                                  // left
         if (target > nums[mid] || target < nums[l]) { // It means we're looking for a value in the right part
           l = mid + 1;
         } else {
           r = mid - 1;
         }
-      } else {// right sorted // It means we're looking for a value between the mid and right
+      } else {// It means the order rotate and right sorted // It means we're looking for a
+              // value between
+              // the mid and right
         if (target < nums[mid] || target > nums[r]) { // It means we're looking for a value in the left part
           r = mid - 1;
         } else {
