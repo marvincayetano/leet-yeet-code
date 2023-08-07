@@ -1,4 +1,5 @@
 // Try to do it using binary search
+// key value are lowercase english
 
 class TimeMap {
 
