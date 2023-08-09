@@ -1,5 +1,6 @@
 // We need to design a key value store like a hashmap
 // All the timestamp in the values should be in increasing order
+// that means we can use that sorted array to do binary search
 
 class TimeMap {
 
