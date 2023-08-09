@@ -1,3 +1,5 @@
+// We need to design a key value store like a hashmap
+// All the timestamp in the values should be in increasing order
 
 class TimeMap {
 
