@@ -1,22 +1,28 @@
 """
-We only need to return the length of the maximum length of characters without duplicates
-We are using set to make sure there's no duplicate
-We keep removing the left character if we find a duplicate
-This solution is O(n), we're only passing one time
+  Were using a sliding window so the solution will be (WindowLen - Count[Most Repeating Char]) = Answer <= K
+  Our window is valid if the Answer is less than or equal to K
+  Left and right pointer are both gonna be in the beggining then we move the R to right until it reaches the end or if the window is not valid anymore
+  Then we move the left until we reach the right
 """
 
 class Solution:
-  def lengthOfLongestSubstring(self, s: str) -> int:
-    charSet = set()
-    l = 0
-    result = 0
+    def characterReplacement(self, s: str, k: int) -> int:
+        count = {}
+        res = 0 # We only need to return the maximum length we find
 
-    for r in range(len(s)):
-      while s[r] in charSet:
-        charSet.remove(s[l])
-        l += 1
+        l = 0
 
-      charSet.add(s[r])
-      result = max(result, r - l + 1)
+        for r in range(len(s)):
+          # Increment the letter in the count hashmap
+          count[s[r]] = 1 + count.get(s[r], 0) # Otherwise return 0
 
-    return result
+          print(count.values())
+          # Check if the window is valid if not then move the left pointer to the right until it is valid
+          # While decrementing the value from the count hashmap
+          while (r - l + 1) - max(count.values()) > k:
+            count [s[l]] -= 1
+            l += 1
+
+          res = max(res, r - l + 1)
+
+        return res
