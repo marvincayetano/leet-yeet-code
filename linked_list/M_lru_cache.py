@@ -1,4 +1,5 @@
 """
+  TODO: Redo this question
   Replace the least recently used hash when doing a put command
   To find the least recently used, we store a linked list as a value of a hash map
   Everytime we add values, we then check which one is least recently used and move it to the left
