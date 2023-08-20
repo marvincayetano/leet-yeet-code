@@ -1,6 +1,7 @@
 """
   We need to find where the split occured, meaning where the most common ancestor is
-
+  if p > current and q > current we go right, we go left otherwise
+  If we cant go either way then we found the answer
 """
 
 # Definition for a binary tree node.
