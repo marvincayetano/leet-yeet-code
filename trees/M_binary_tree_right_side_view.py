@@ -1,10 +1,9 @@
 """
-  Get all the values when looking at the right side
-  What if you can view more nodes in the left side because they're not being blocked
-  Well we can count the maximum depth from the right side, then if we reach the max depth
-  we try to get the next one and just iterate using the maximum depth
-  This is DFS,
+  Naive approch is to go to each possible nodes starting from the right side
   BFS level order traversal is easier it seems. we get the right most value everytime
+  add the row values to the queue then keep track of the right side
+  after each row, we keep the right side in the result array
+  for the queue, we pop one then add the child nodes to the queue
 """
 
 
@@ -14,5 +13,25 @@
 #         self.val = val
 #         self.left = left
 #         self.right = right
+import collections
+
+
 class Solution:
     def rightSideView(self, root: TreeNode) -> List[int]:
+      res = []
+      q = collections.deque([root])
+
+      while q:
+         rightSide = None
+         qLen = len(q)
+
+         for i in range(qLen):
+            node = q.popleft()
+            if node:
+                rightSide = node
+                q.append(node.left)
+                q.append(node.right)
+
+         if rightSide:
+            res.append(rightSide.val)
+      return res
