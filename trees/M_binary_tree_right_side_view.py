@@ -19,6 +19,7 @@ import collections
 class Solution:
     def rightSideView(self, root: TreeNode) -> List[int]:
       res = []
+
       q = collections.deque([root])
 
       while q:
