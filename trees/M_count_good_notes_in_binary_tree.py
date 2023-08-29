@@ -5,4 +5,4 @@
 #         self.left = left
 #         self.right = right
 class Solution:
-    # def goodNodes(self, root: TreeNode) -> int:
+    def goodNodes(self, root: TreeNode) -> int:
