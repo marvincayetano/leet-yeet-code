@@ -1,4 +1,4 @@
-# TODO: REDO THIS.
+# TODO: REDO THIS
 
 # """
 #   Valid binary search tree - From the root. Left should be lesser. Right should be greater
