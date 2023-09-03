@@ -1,5 +1,5 @@
 """
-
+  Valid binary search tree - Left should be lesser. Right should be greater
 """
 
 # Definition for a binary tree node.
