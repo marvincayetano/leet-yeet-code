@@ -1,5 +1,5 @@
 """
-  Valid binary search tree - Left should be lesser. Right should be greater
+  Valid binary search tree - From the root. Left should be lesser. Right should be greater
 """
 
 # Definition for a binary tree node.
@@ -10,3 +10,14 @@
 #         self.right = right
 class Solution:
     def isValidBST(self, root: Optional[TreeNode]) -> bool:
+
+      def valid(node, left, right):
+        if not node:
+           return True
+
+        if (left > node.val and right < node.val):
+          return False
+
+        return (valid(node.left, left, node.val) and valid(node.right, node.val, right))
+
+      return valid(root, float("-inf"), float("+inf"))
