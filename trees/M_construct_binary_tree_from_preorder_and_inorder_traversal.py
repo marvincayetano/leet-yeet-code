@@ -1,6 +1,6 @@
 """
   Preorder - Top Left Right
-  Inorder - Left Top Right
+  Inorder - Left Top Right/Right Left Child
 """
 
 # Definition for a binary tree node.
