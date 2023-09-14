@@ -1,6 +1,7 @@
 """
   Preorder - Top Left Right
   Inorder - Left Top Right/Right Left Child
+  oh. preorder and inorder are given, you just have to create a new tree
 """
 
 # Definition for a binary tree node.
