@@ -8,7 +8,6 @@ class Trie(object):
 
     def __init__(self):
 
-
     def insert(self, word):
         """
         :type word: str
